@@ -105,8 +105,8 @@ if (!defined('BASEPATH'))
 	var site_url = '<?php echo site_url() ?>';
 
 	var gt_page = '<?php echo addslashes(_("Page")) ?>';
-	var gt_key_suggestion = '<?php echo addslashes(_("Use W-A-S-D or the arrow keys to navigate")) ?>';
-	var gt_key_tap = '<?php echo addslashes(_("Double-tap to change page")) ?>';
+	var gt_key_suggestion = '<?php echo addslashes(_("Utilisez les touches W-A-S-D ou les flèches pour naviguer")) ?>';
+	var gt_key_tap = '<?php echo addslashes(_("Appuyez deux fois pour changer de page")) ?>';
 
 	function changePage(id, noscroll, nohash)
 	{
@@ -194,7 +194,7 @@ if (!defined('BASEPATH'))
 			jQuery('#page .inner img.open').attr({width:width, height:height});
 			if(jQuery("#page").width() < jQuery("#page .inner img.open").width()) {
 				isSpread = true;
-				create_message('is_spread', 3000, 'Tap the arrows twice to change page');
+				create_message('is_spread', 3000, 'Appuyez deux fois sur les flèches pour changer de page');
 			}
 			else {
 				jQuery("#page").css({'max-width': width+10, 'overflow':'hidden'});

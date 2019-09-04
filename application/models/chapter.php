@@ -125,21 +125,21 @@ class Chapter extends DataMapper
 	 */
 	function help_lang()
 	{
-		$this->validation['name']['label'] = _('Name');
-		$this->validation['name']['help'] = _('Insert the title of the chapter, if available.');
-		$this->validation['chapter']['label'] = _('Chapter Number');
-		$this->validation['chapter']['help'] = _('Insert the chapter number.');
-		$this->validation['subchapter']['label'] = _('Subchapter Number');
-		$this->validation['subchapter']['help'] = _('Insert a subchapter number to identify extra chapters. Zero for main chapter. Start counting subchapters from 1, not from 5.');
+		$this->validation['name']['label'] = _('Nom');
+		$this->validation['name']['help'] = _('Entrez le titre du chapitre, si disponible.');
+		$this->validation['chapter']['label'] = _('Numéro du chapitre');
+		$this->validation['chapter']['help'] = _('Entrez le numéro du chapitre.');
+		$this->validation['subchapter']['label'] = _('Numéro du sous-chapitre');
+		$this->validation['subchapter']['help'] = _('Entrez un numéro de sous-chapitre pour identifier les chapitres bonus. (Par ex sous-chapitre 5, pour faire [chapitre].5)');
 		$this->validation['volume']['label'] = _('Volume');
-		$this->validation['volume']['help'] = _('Insert the volume number.');
-		$this->validation['language']['label'] = _('Language');
-		$this->validation['language']['help'] = _('Select the language of the chapter.');
+		$this->validation['volume']['help'] = _('Entrez le numéro du volume.');
+		$this->validation['language']['label'] = _('Langage');
+		$this->validation['language']['help'] = _('Séléctionnez le langage du chapitre.');
 		$this->validation['description']['label'] = _('Description');
-		$this->validation['description']['help'] = _('Insert a description.');
-		$this->validation['hidden']['label'] = _('Visibility');
-		$this->validation['hidden']['help'] = _('Hide the chapter from public view.');
-		$this->validation['hidden']['text'] = _('Hidden');
+		$this->validation['description']['help'] = _('Entrez une description.');
+		$this->validation['hidden']['label'] = _('Visibilité');
+		$this->validation['hidden']['help'] = _('Cachez le chapitre aux visiteurs.');
+		$this->validation['hidden']['text'] = _('Caché');
 	}
 
 
@@ -340,7 +340,7 @@ class Chapter extends DataMapper
 		$comic = new Comic($data['comic_id']);
 		if ($comic->result_count() == 0)
 		{
-			set_notice('error', _('The series you were adding the chapter to doesn\'t exist.'));
+			set_notice('error', _('La série que vous vouliez mettre à jour n\'existe pas.'));
 			log_message('error', 'add: comic_id does not exist in comic database');
 			return false;
 		}
@@ -386,7 +386,7 @@ class Chapter extends DataMapper
 		$comic = new Comic($this->comic_id);
 		if ($this->result_count() == 0)
 		{
-			set_notice('error', _('You\'re trying to delete something that doesn\'t even have a related series\'?'));
+			set_notice('error', _('Vous essayez de supprimer quelque chose qui n\'a même pas de série ?'));
 			log_message('error', 'remove_chapter: failed to find requested id');
 			return false;
 		}
@@ -432,7 +432,7 @@ class Chapter extends DataMapper
 			$this->where("id", $data["id"])->get();
 			if ($this->result_count() == 0)
 			{
-				set_notice('error', _('The chapter you tried to edit doesn\'t exist.'));
+				set_notice('error', _('Le chapitre que vous essayez d’éditer n\'existe pas.'));
 				log_message('error', 'update_chapter_db: failed to find requested id');
 				return false;
 			}
@@ -454,7 +454,7 @@ class Chapter extends DataMapper
 			$comic = new Comic($this->comic_id);
 			if ($comic->result_count() == 0)
 			{
-				set_notice('error', _('The series you were referring to doesn\'t exist.'));
+				set_notice('error', _('La série à laquelle vous vous référez n\'existe pas.'));
 				log_message('error', 'update_chapter_db: comic_id does not exist in comic database');
 				return false;
 			}
@@ -550,7 +550,7 @@ class Chapter extends DataMapper
 				$team->where("name", $data['team'][0])->get();
 				if ($team->result_count() == 0)
 				{
-					set_notice('error', _('The team you were referring this chapter to doesn\'t exist.'));
+					set_notice('error', _('La team auquel vous avez attribué ce chapitre n\'existe pas.'));
 					log_message('error', 'update_chapter_db: team_id does not exist in team database');
 					return false;
 				}
@@ -558,7 +558,7 @@ class Chapter extends DataMapper
 			}
 			else
 			{
-				set_notice('error', _('You must select at least one team for this chapter'));
+				set_notice('error', _('Vous devez sélectionner au moins une Team pour ce chapitre'));
 				log_message('error', 'update_chapter_db: team_id not defined');
 				return false;
 			}
@@ -567,7 +567,7 @@ class Chapter extends DataMapper
 		{ // If we're here it means that this is a new chapter with no teams assigned.
 			// The system doesn't allow chapters without related teams. It must be at
 			// least "anonymous" or a default anonymous team.
-			set_notice('error', _('You haven\'t selected any team in relation to this chapter.'));
+			set_notice('error', _('Vous n\'avez pas sélectionné de Team en relation avec ce chapitre.'));
 			log_message('error', 'update_chapter_db: team_id does not defined');
 			return false;
 		}
@@ -580,12 +580,12 @@ class Chapter extends DataMapper
 			if (!$this->valid)
 			{
 				log_message('error', $this->error->string);
-				set_notice('error', _('Check that you have inputted all the required fields.'));
+				set_notice('error', _('Vérifiez que vous avez bien rempli tous les champs nécessaires.'));
 				log_message('error', 'update_chapter_db: failed validation');
 			}
 			else
 			{
-				set_notice('error', _('Failed to save to database for unknown reasons.'));
+				set_notice('error', _('Pour des raisons inconnues,il est impossible de sauvegarder cela dans la base de données.'));
 				log_message('error', 'update_chapter_db: failed to save');
 			}
 			return false;
@@ -621,7 +621,7 @@ class Chapter extends DataMapper
 		$success = $this->delete();
 		if (!$success)
 		{
-			set_notice('error', _('Failed to remove the chapter from the database for unknown reasons.'));
+			set_notice('error', _('Pour des raisons inconnues, il est impossible de supprimer le chapitre de la base de données.'));
 			log_message('error', 'remove_chapter_db: id found but entry not removed');
 			return false;
 		}
@@ -642,7 +642,7 @@ class Chapter extends DataMapper
 		// Get the series if we didn't yet.
 		if (!$this->get_comic())
 		{
-			set_notice('error', _('No series related to this chapter.'));
+			set_notice('error', _('Aucune série liée à ce chapitre.'));
 			log_message('error', 'add_chapter_dir: comic did not exist');
 			return false;
 		}
@@ -651,7 +651,7 @@ class Chapter extends DataMapper
 		$dir = "content/comics/" . $this->comic->directory() . "/" . $this->directory();
 		if (!mkdir($dir))
 		{
-			set_notice('error', _('Failed to create the chapter directory. Please, check file permissions.'));
+			set_notice('error', _('Impossible de créer le dossier du chapitre. Vérifiez les permissions des fichiers s\'il vous plaît.'));
 			log_message('error', 'add_chapter_dir: folder could not be created');
 			return false;
 		}
@@ -672,7 +672,7 @@ class Chapter extends DataMapper
 		// Get the series if we didn't yet.
 		if (!$this->get_comic())
 		{
-			set_notice('error', _('No series related to this chapter.'));
+			set_notice('error', _('Aucune série liée à ce chapitre.'));
 			log_message('error', 'remove_chapter_dir: comic did not exist');
 			return false;
 		}
@@ -683,7 +683,7 @@ class Chapter extends DataMapper
 		// Delete all files inside of it
 		if (!delete_files($dir, TRUE))
 		{
-			set_notice('error', _('Failed to remove the files inside the chapter directory. Please, check file permissions.'));
+			set_notice('error', _('Impossible de supprimer les fichiers contenus dans ce dossier. Vérifiez les permissions des fichiers s\'il vous plaît.'));
 			log_message('error', 'remove_chapter_dir: files inside folder could not be removed');
 			return false;
 		}
@@ -692,7 +692,7 @@ class Chapter extends DataMapper
 			// On success of emptying, remove the chapter directory itself.
 			if (!rmdir($dir))
 			{
-				set_notice('error', _('Failed to remove the chapter directory. Please, check file permissions.'));
+				set_notice('error', _('Impossible de supprimer le dossier du chapitre. Vérifiez les permissions des fichiers s\'il vous plaît.'));
 				log_message('error', 'remove_chapter_dir: folder could not be removed');
 				return false;
 			}
@@ -737,7 +737,7 @@ class Chapter extends DataMapper
 		if ($this->get_comic() === FALSE)
 		{
 			$errors[] = 'chapter_comic_entry_not_found';
-			set_notice('warning', _('Found a chapter entry without a comic entry, Chapter ID: ' . $this->id));
+			set_notice('warning', _('Découverte d\'une entrée de chapitre sans entrée de manga, ID de chapitre : ' . $this->id));
 			log_message('debug', 'check: chapter entry without comic entry');
 
 			if ($repair)
@@ -755,7 +755,7 @@ class Chapter extends DataMapper
 		if (!is_dir($path))
 		{
 			$errors[] = 'chapter_directory_not_found';
-			set_notice('warning', _('No directory found for:') . ' ' . $this->comic->name . ' > ' . $this->title());
+			set_notice('warning', _('Aucun chemin trouvé pour :') . ' ' . $this->comic->name . ' > ' . $this->title());
 			log_message('debug', 'check: chapter directory missing at ' . $path);
 
 			// the folder doesn't exist, so get rid of the entry from database
@@ -777,7 +777,7 @@ class Chapter extends DataMapper
 			{
 				// non writable files are horrendous, send a notice and stop the machines
 				$errors[] = 'chapter_non_writable_file';
-				set_notice('warning', _('Found non writable files in the comics folder. Check your files permissions.'));
+				set_notice('warning', _('Découverte d\'un ficher non inscriptible dans le dossier de manga. Vérifier le fichier de permission.'));
 				log_message('debug', 'check: non writable file: ' . $file['relative_path']);
 				return $errors;
 			}
@@ -822,7 +822,7 @@ class Chapter extends DataMapper
 		foreach ($files as $file)
 		{
 			$errors[] = 'chapter_unidentified_file';
-			set_notice('warning', _('Unidentified file found in:') . ' ' . $this->comic->name . ' > ' . $this->title() . ': ' . $file['name']);
+			set_notice('warning', _('Fichier non identifié trouvé dans :') . ' ' . $this->comic->name . ' > ' . $this->title() . ': ' . $file['name']);
 			log_message('debug', 'check: unidentified file ' . $file['relative_path'] . $file['name']);
 
 			// repairing this means getting rid of extraneous files
@@ -981,7 +981,7 @@ class Chapter extends DataMapper
 			}
 			else
 			{
-				$echo .= _('Chapter') . ' ' . $this->chapter;
+				$echo .= _('Chapitre') . ' ' . $this->chapter;
 			}
 		}
 		if ($this->subchapter && $this->chapter > 0) // if it's a one-shot, we still use subchapter for sorting, but don't display it
@@ -1085,7 +1085,7 @@ class Chapter extends DataMapper
 		$CI = & get_instance();
 		if (!$CI->tank_auth->is_team_leader_array($this->teams))
 			return "";
-		return '<a href="' . $this->edit_href() . '" title="' . _('Edit') . ' ' . $this->title() . '">' . _('Edit') . '</a>';
+		return '<a href="' . $this->edit_href() . '" title="' . _('Editer') . ' ' . $this->title() . '">' . _('Editer') . '</a>';
 	}
 
 

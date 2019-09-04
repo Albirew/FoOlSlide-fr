@@ -194,7 +194,7 @@ class Reader extends Public_Controller
 		if($comic->adult && !$this->agent->is_robot() && $this->session->userdata('adult') != TRUE)
 		{
 			$this->template->set('comic', $comic);
-			$this->template->title(_('Adult content notice'));
+			$this->template->title(_('Avis de contenu pour adulte'));
 			$this->template->build('adult');
 			return FALSE;
 		}

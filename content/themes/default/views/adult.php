@@ -6,13 +6,13 @@
 		<?php echo $comic->name; ?>
 	</h1>
 	<div class="info">
-		<?php echo _('This series contains mature contents and is meant to be viewed by an adult audience.<br/>	If you are of legal age, click on continue.'); ?>
+		<?php echo _('Cette série contient du contenu pour adulte et est destinée à être visionnée par un public majeur.<br/>	Si vous êtes majeur, cliquez sur Continuer.'); ?>
 		<br/>
 		<br/>
-		<a href="<?php echo site_url() ?>">Back to index</a> or 
+		<a href="<?php echo site_url() ?>">Retourner sur la page d'accueil</a> ou 
 		<?php 
 			echo form_open('','',array('adult' => 'true'));
-			echo form_submit('', _('Continue'));
+			echo form_submit('', _('Continuer'));
 			echo form_close();
 		?>
 	</div>
