@@ -47,6 +47,12 @@ class Comic extends DataMapper
 			'type' => 'upload',
 			'display' => 'image',
 		),
+		'allowdl' => array (
+			'rules' => array('is_int'),
+			'label' => 'Autoriser Download',
+			'type' => 'checkbox',
+			'values' => array('0' => 'Non', '1' => 'Oui')
+		),
 		'adult' => array(
 			'rules' => array('is_int'),
 			'label' => 'Adult Notice',
@@ -142,6 +148,7 @@ class Comic extends DataMapper
 		$this->validation['artist']['help'] = _('Insert the artist of this title.');
 		$this->validation['description']['label'] = _('Description');
 		$this->validation['description']['help'] = _('Insert a description.');
+		$this->validation['allowdl']['text'] = _('Enable');
 		$this->validation['adult']['label'] = _('Adult Notice');
 		$this->validation['adult']['text'] = _('Enable');
 		$this->validation['hidden']['label'] = _('Visibility');
@@ -509,6 +516,8 @@ class Comic extends DataMapper
 			$this->adult = 0;
 		if (!isset($data['hidden']) || $data['hidden'] != 1)
 			$this->hidden = 0;
+		if (!isset($data['allowdl']) || $data['allowdl'] != 1)
+			$this->allowdl = 0;
 
 		// rename the folder if the stub changed
 		if (isset($old_stub) && $old_stub != $this->stub && is_dir("content/comics/" . $old_stub . "_" . $this->uniqid))

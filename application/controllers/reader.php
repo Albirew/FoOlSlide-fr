@@ -316,7 +316,12 @@ class Reader extends Public_Controller
 
 		$comice = new Comic();
 		$comice->where('stub', $comic)->get();
-
+		
+		if ($comice->allowdl == false)
+		{
+			show_404();
+		}
+		
 		if ($comice->result_count() == 0)
 		{
 			set_notice('warn', 'This comic does not exist.');
