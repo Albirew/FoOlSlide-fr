@@ -18,8 +18,8 @@
  * NOTE: If you change these, also change the error_reporting() code below
  *
  */
-	define('ENVIRONMENT', 'production');
-	define('DS', DIRECTORY_SEPARATOR);
+define('ENVIRONMENT', 'production');
+define('DS', DIRECTORY_SEPARATOR);
 /*
  *---------------------------------------------------------------
  * ERROR REPORTING
