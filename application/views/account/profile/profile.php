@@ -47,7 +47,7 @@
 	<div class="right">
 		<div class="formgroup">
 			<div style="text-align:center"><img width="150" height="150" src="<?php echo get_gravatar($user_email, 150); ?>" /></div>
-			<div><a href="http://gravatar.com" class="button" target="_blank"><?php echo _('Change avatar (via Gravatar.com)') ?></a></div>
+			<div><a href="https://gravatar.com" class="button" target="_blank"><?php echo _('Change avatar (via Gravatar.com)') ?></a></div>
 		</div>
 		<div class="formgroup">
 			<div>Your email: <?php echo $user_email ?> (<?php echo _('not public') ?>)</div>
