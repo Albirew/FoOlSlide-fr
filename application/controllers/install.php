@@ -58,7 +58,7 @@ class Install extends Install_Controller
 				'placeholder' => 'required',
 				'required' => 'required',
 				'value' => 'localhost',
-				'help' => _('The hostname of the server hosting the database. 99.8%% of times is localhost')
+				'help' => _('The hostname of the server hosting the database. 99.8% of times is localhost')
 			)
 		);
 
@@ -95,6 +95,7 @@ class Install extends Install_Controller
 				'name' => 'db_password',
 				'id' => 'db_password',
 				'maxlength' => '200',
+				'required' => 'required',
 				'placeholder' => 'required',
 				'help' => _('The password of the user with permissions to the database')
 			)

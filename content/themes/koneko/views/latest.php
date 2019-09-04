@@ -20,7 +20,7 @@
 				echo '<div class="group"><div class="title">'.$chapter->comic->url().'</div>';
 				$current_comic = $chapter->comic_id;
 			}
-
+		
 			echo '<div class="element">'.$chapter->download_url(NULL, 'fleft small').'
 					<div class="title">' . $chapter->url($chapter->title(false)) . '</div>
 					<div class="meta_r">' . _('par') . ' ' . $chapter->team_url() . ', ' . $chapter->date() . ' ' . $chapter->edit_url() . '</div>

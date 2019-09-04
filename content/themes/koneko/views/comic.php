@@ -3,13 +3,18 @@
 
 	<div class="comic info">
 		<?php if ($comic->get_thumb()): ?>
+			<!-- <div class="thumbnail">
+				<img src="<?php // echo $comic->get_thumb(); ?>" />
+			</div> -->
 		<?php endif; ?>
 
         <div class="large comic">
             <h1 class="title">
                 <?php echo $comic->name; ?>
             </h1>
+			<!-- <div class="thumbnail"> -->
 				<img style="float: left; margin-right: 10px;" src="<?php echo $comic->get_thumb(); ?>" />
+			<!-- </div> -->
             <div class="info">
                     <?php if ($comic->author) : ?><?php echo '<b>'._('Auteur').'</b>: '.$comic->author; ?><br><?php endif; ?>
 					<br />
@@ -40,7 +45,7 @@
             </div>
         </div>
 	</div>
-
+	
 	<div class="list">
 		<div class="title"></div>
 		<?php
@@ -66,7 +71,7 @@
 					echo '<div class="title">'._('Chapitres').'</div>';
 				}
 			}
-
+			
 			echo '<div class="element">'.$chapter->download_url(NULL, 'fleft small').'
 					<div class="title">' . $chapter->url($chapter->title(false)) . '</div>
 					<div class="meta_r">' . _('par') . ' ' . $chapter->team_url() . ', ' . $chapter->date() . ' ' . $chapter->edit_url() . '</div>
