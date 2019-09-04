@@ -1,4 +1,4 @@
-# 
+#
 # Translators:
 # Arthur Pingouin <pokepingouin@gmail.com>, 2012.
 #   <aza115@hotmail.com>, 2011.
@@ -7,17 +7,18 @@ msgstr ""
 "Project-Id-Version: FoOlSlide\n"
 "Report-Msgid-Bugs-To: http://github.com/woxxy/FoOlSlide/issues\n"
 "POT-Creation-Date: 2012-01-23 16:21+0100\n"
-"PO-Revision-Date: 2012-01-23 16:53+0100\n"
+"PO-Revision-Date: 2019-09-04 23:51+0200\n"
 "Last-Translator: Woxxy <woxxy@foolrulez.org>\n"
 "Language-Team: FoOlRulez <gettext@foolrulez.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr_FR\n"
-"Plural-Forms: nplurals=2; plural=(n > 1)\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Poedit-Basepath: /Users/woxxy/github/FoOlSlide\n"
 "X-Poedit-KeywordsList: _;gettext;gettext_noop\n"
 "X-Poedit-SourceCharset: utf-8\n"
+"X-Generator: Poedit 2.2.3\n"
 "X-Poedit-SearchPath-0: /Users/woxxy/github/FoOlSlide\n"
 
 #: /Users/woxxy/github/FoOlSlide/application/controllers/install.php:15
@@ -44,7 +45,7 @@ msgstr "Nom de l'hébergeur de la base de données"
 
 #: /Users/woxxy/github/FoOlSlide/application/controllers/install.php:61
 #, php-format
-msgid "The hostname of the server hosting the database. 99.8%% of times is localhost"
+msgid "The hostname of the server hosting the database. 99.8% of times is localhost"
 msgstr "L'hébergeur du serveur de la base de données. Dans 99,8% des cas il s'agit de l'hôte local"
 
 #: /Users/woxxy/github/FoOlSlide/application/controllers/install.php:66
@@ -172,7 +173,7 @@ msgstr "Dernières sorties"
 
 #: /Users/woxxy/github/FoOlSlide/application/controllers/reader.php:195
 msgid "Adult content notice"
-msgstr ""
+msgstr "Notification de contenu adulte"
 
 #: /Users/woxxy/github/FoOlSlide/application/controllers/reader.php:295
 msgid "Chapter"
@@ -736,7 +737,7 @@ msgstr "Séries"
 #: /Users/woxxy/github/FoOlSlide/application/controllers/admin/series.php:32
 #: /Users/woxxy/github/FoOlSlide/application/controllers/admin/series.php:62
 msgid "Manage"
-msgstr "Administrer"
+msgstr "Gérer"
 
 #: /Users/woxxy/github/FoOlSlide/application/controllers/admin/series.php:57
 msgid "Sorry, the series you are looking for does not exist."
@@ -923,12 +924,12 @@ msgstr "Vos logs FoOlSlide ont été triés."
 
 #: /Users/woxxy/github/FoOlSlide/application/controllers/admin/system.php:368
 msgid "You have to correct the errors above to continue."
-msgstr ""
+msgstr "Vous devez corriger les erreurs ci-dessus pour continuer."
 
 #: /Users/woxxy/github/FoOlSlide/application/controllers/admin/system.php:399
 #, php-format
 msgid "To repair automatically by removing the unidentified data and rebuilding the missing thumbnails, enter: %s"
-msgstr ""
+msgstr "Pour réparer automatiquement par suppression des données non identifiées et par reconstruction des miniatures manquantes, entrer: %s"
 
 #: /Users/woxxy/github/FoOlSlide/application/controllers/admin/system.php:401
 msgid "Successfully repaired your library."
@@ -1953,7 +1954,7 @@ msgstr "Cette valeur ne peut être vérifiée via PHP."
 
 #: /Users/woxxy/github/FoOlSlide/application/views/admin/system/information.php:44
 msgid "The Nginx web server has its own internal upload limit variable. If you are receiving upload errors, and your PHP configuration looks fine, check this variable in your Nginx configuration file."
-msgstr ""
+msgstr "Le serveur web Nginx possède sa propre variable de limite d'envoi. Si vous recevez des erreurs d'envoi et que votre configuration PHP a l'air bonne, veuillez vérifier cette variable dans votre fichier de configuration Nginx."
 
 #: /Users/woxxy/github/FoOlSlide/application/views/admin/system/information.php:44
 #: /Users/woxxy/github/FoOlSlide/application/views/admin/system/information.php:89
@@ -2069,7 +2070,7 @@ msgstr "Faible valeur"
 
 #: /Users/woxxy/github/FoOlSlide/application/views/admin/system/information.php:117
 msgid "Your current value for max execution time is low. This option affects functions that require large amounts of processing time, such as processing images. If your server doesn't have a powerful processor or you're processing large amounts of images, this value must be set as high as the total processing time taken to complete the function."
-msgstr ""
+msgstr "Votre valeur actuelle pour le temps d'exécution max est faible. Cette option affecte les fonctions nécessitant un temps de traitement important, tel que le traitement des images. Si votre serveur ne dispose pas d'un processeur puissant ou si vous traitez de grandes quantités d'images, cette valeur doit être définie sur le temps de traitement total nécessaire à l'exécution de la fonction."
 
 #: /Users/woxxy/github/FoOlSlide/application/views/admin/system/information.php:123
 msgid "File Uploads"
@@ -2085,7 +2086,7 @@ msgstr "Active l'envoi de fichier HTTP"
 
 #: /Users/woxxy/github/FoOlSlide/application/views/admin/system/information.php:129
 msgid "Your PHP configuration currently has file uploads disabled. This variable must be enabled or FoOlSlide will not operate correctly."
-msgstr ""
+msgstr "Votre configuration PHP a actuellement l'envoi de fichiers désactivé. Cette variable doit être activée sinon FoOlSlide ne peux pas fonctionner correctement."
 
 #: /Users/woxxy/github/FoOlSlide/application/views/admin/system/information.php:135
 msgid "Max POST Size"
@@ -2097,7 +2098,7 @@ msgstr "Taille maximale des postes autorisés dans la base de donnée"
 
 #: /Users/woxxy/github/FoOlSlide/application/views/admin/system/information.php:141
 msgid "Your current value for POST size is low. This variable should generally be set at a higher value to accomodate and ensure that all of your chapters will be uploaded."
-msgstr ""
+msgstr "Votre valeur actuelle pour la taille du POST est faible. Cette variable devrais généralement être définie sur une valeur plus élevée pour être certain que tous vos chapitres seront envoyés."
 
 #: /Users/woxxy/github/FoOlSlide/application/views/admin/system/information.php:147
 msgid "Max Upload Size"
@@ -2109,7 +2110,7 @@ msgstr "Taille maximale autorisée pour un fichier uploadé."
 
 #: /Users/woxxy/github/FoOlSlide/application/views/admin/system/information.php:153
 msgid "Your current value for max upload size is low. This variable should generally be set at a higher value to accommodate and allow your largest chapter to be uploaded."
-msgstr ""
+msgstr "Votre valeur actuelle pour la taille max d'envoi est faible. Cette variable devrait généralement être définie sur une valeur plus élevée pour permettre l'envoi du plus grand chapitre."
 
 #: /Users/woxxy/github/FoOlSlide/application/views/admin/system/information.php:159
 msgid "Max File Uploads"
@@ -2121,7 +2122,7 @@ msgstr "Nombre maximal de fichiers autorisé pour un upload simultané."
 
 #: /Users/woxxy/github/FoOlSlide/application/views/admin/system/information.php:165
 msgid "Your current value for max file uploads is low. This variable should generally be set at a higher value than the number of pages your chapters may have."
-msgstr ""
+msgstr "Votre valeur actuelle pour le nombre max d'envoi de fichiers est faible. Cette variable devrais généralement être définie sur une valeur supérieure au nombre de pages de vos chapitres."
 
 #: /Users/woxxy/github/FoOlSlide/application/views/admin/system/information.php:175
 msgid "Extensions"
@@ -2140,7 +2141,7 @@ msgstr "Non installé"
 
 #: /Users/woxxy/github/FoOlSlide/application/views/admin/system/information.php:181
 msgid "This is a library used to communicate with different types of servers with many types of protocols."
-msgstr ""
+msgstr "C'est une librairie utilisée afin de communiquer avec différents types de serveurs avec plusieurs types de protocoles."
 
 #: /Users/woxxy/github/FoOlSlide/application/views/admin/system/information.php:185
 msgid "Missing"
@@ -2430,11 +2431,11 @@ msgstr "Venez discuter avec nous"
 
 #: /Users/woxxy/github/FoOlSlide/content/themes/default/views/adult.php:9
 msgid "This series contains mature contents and is meant to be viewed by an adult audience.<br/>\tIf you are of legal age, click on continue."
-msgstr ""
+msgstr "Cette série contient du contenu pour adulte et est destinée à être visionnée par un public majeur.<br/>\tSi vous êtes majeur, cliquez sur Continuer."
 
 #: /Users/woxxy/github/FoOlSlide/content/themes/default/views/adult.php:15
 msgid "Continue"
-msgstr ""
+msgstr "Continuer"
 
 #: /Users/woxxy/github/FoOlSlide/content/themes/default/views/comic.php:13
 msgid "Title"
@@ -2533,4 +2534,3 @@ msgstr "Aucun membre présent dans cette Team"
 #: /Users/woxxy/github/FoOlSlide/content/themes/default/views/layouts/reader.php:88
 msgid "Go back to site"
 msgstr "Retour vers le site"
-
