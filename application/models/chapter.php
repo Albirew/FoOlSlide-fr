@@ -133,8 +133,8 @@ class Chapter extends DataMapper
 		$this->validation['subchapter']['help'] = _('Entrez un numéro de sous-chapitre pour identifier les chapitres bonus. (Par ex sous-chapitre 5, pour faire [chapitre].5)');
 		$this->validation['volume']['label'] = _('Volume');
 		$this->validation['volume']['help'] = _('Entrez le numéro du volume.');
-		$this->validation['language']['label'] = _('Langage');
-		$this->validation['language']['help'] = _('Séléctionnez le langage du chapitre.');
+		$this->validation['language']['label'] = _('Langue');
+		$this->validation['language']['help'] = _('Séléctionnez la langue du chapitre.');
 		$this->validation['description']['label'] = _('Description');
 		$this->validation['description']['help'] = _('Entrez une description.');
 		$this->validation['hidden']['label'] = _('Visibilité');
@@ -550,7 +550,7 @@ class Chapter extends DataMapper
 				$team->where("name", $data['team'][0])->get();
 				if ($team->result_count() == 0)
 				{
-					set_notice('error', _('La team auquel vous avez attribué ce chapitre n\'existe pas.'));
+					set_notice('error', _('La Team auquel vous avez attribué ce chapitre n\'existe pas.'));
 					log_message('error', 'update_chapter_db: team_id does not exist in team database');
 					return false;
 				}
@@ -655,7 +655,6 @@ class Chapter extends DataMapper
 			log_message('error', 'add_chapter_dir: folder could not be created');
 			return false;
 		}
-
 		return true;
 	}
 
