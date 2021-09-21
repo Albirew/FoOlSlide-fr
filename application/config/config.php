@@ -252,7 +252,7 @@ $config['sess_cookie_name'] = 'ci_session';
 $config['sess_expiration'] = 7200;
 $config['sess_expire_on_close'] = FALSE;
 $config['sess_encrypt_cookie'] = TRUE;
-$config['sess_use_database'] = TRUE;
+$config['sess_use_database'] = FALSE;
 $config['sess_table_name'] = 'ci_sessions';
 $config['sess_match_ip'] = FALSE;
 $config['sess_match_useragent'] = FALSE;
@@ -268,7 +268,7 @@ $config['sess_time_to_update'] = 300;
   | 'cookie_path'   =  Typically will be a forward slash
   |
  */
-$config['cookie_prefix'] = '';
+$config['cookie_prefix'] = 'fool_';
 $config['cookie_domain'] = '';
 $config['cookie_path'] = '/';
 
@@ -317,7 +317,7 @@ $config['csrf_expire'] = 7200;
   | by the output class.  Do not 'echo' any values with compression enabled.
   |
  */
-$config['compress_output'] = TRUE;
+$config['compress_output'] = FALSE;
 
 /*
   |--------------------------------------------------------------------------
