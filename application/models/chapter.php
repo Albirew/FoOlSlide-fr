@@ -574,6 +574,8 @@ class Chapter extends DataMapper
 
 
 		// Save with validation. Push false if fail, true if good.
+		if ((isset($this->id) && $this->id == '')) {$this->id = NULL;}
+		if ((isset($this->volume) && $this->volume == '')) {$this->volume = '0';}
 		$success = $this->save();
 		if (!$success)
 		{

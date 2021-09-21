@@ -523,6 +523,7 @@ class Comic extends DataMapper
 		}
 
 		// let's save and give some error check. Push false if fail, true if good.
+		if ((isset($this->id) && $this->id == '')) {$this->id = NULL;}
 		$success = $this->save();
 		if (!$success)
 		{

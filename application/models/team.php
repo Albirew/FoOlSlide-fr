@@ -250,6 +250,7 @@ class Team extends DataMapper
 		}
 
 		// let's save and give some error check. Push false if fail, true if good.
+		if ((isset($this->id) && $this->id == '')) {$this->id = NULL;}
 		if (!$this->save())
 		{
 			if (!$this->valid)
